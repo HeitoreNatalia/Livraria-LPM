@@ -19,9 +19,10 @@ public class Livro {
       
     }
 
-    public void mostradados()
+    public void mostraDados()
     {
-        System.out.println("Nome: " + nome + "\nDescrição: " + descricao + "\nAutor: " + autor + "\nEditora" + editora + "\nPreço" + preco);
+        System.out.println("\nDados do livro: \n");
+        System.out.println("Nome: " + nome + "\nDescrição: " + descricao + "\nAutor: " + autor + "\nEditora: " + editora + "\nPreço: " + preco);
     }
 
     public String getEditora() {

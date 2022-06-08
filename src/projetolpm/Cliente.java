@@ -3,7 +3,7 @@ package projetolpm;
 public class Cliente extends Pessoa implements IPessoa{
     
     private String preferencias;
-    private int id;
+    private static int id;
 
     public Cliente(String nome, String cpf, String tel, int idade, int id, String preferencias) {
         super(nome, cpf, tel, idade, id);
@@ -29,6 +29,7 @@ public class Cliente extends Pessoa implements IPessoa{
     @Override
     public void mostraDados()
     {
+        System.out.println("\nDados do cliente: \n");
         System.out.println("\nNome: " + nome + "\nIdade: " + idade + "\nCPF: " + cpf + "\nTelefone: " + tel);
     }
 }

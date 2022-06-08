@@ -2,7 +2,7 @@ package projetolpm;
 
 public class Funcionario extends Pessoa implements IPessoa {
     private double salario;
-    private int id;
+    private static int id;
     
     public Funcionario (String nome, String cpf, String tel, int idade, int id, double salario) {
         super(nome, cpf, tel, idade, id);
@@ -12,7 +12,7 @@ public class Funcionario extends Pessoa implements IPessoa {
     @Override
     public void mostraDados()
     {
-        System.out.println("\nNome: " + nome + "\nIdade: " + idade + "\nCPF: " + cpf + "\nTelefone: " + tel + "\nSalário" + salario);
+        System.out.println("\nNome: " + nome + "\nIdade: " + idade + "\nCPF: " + cpf + "\nTelefone: " + tel + "\nSalário: " + salario + "\nId: " + id);
     }
 
     public double getSalario() {
