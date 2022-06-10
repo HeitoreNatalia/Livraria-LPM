@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f5adf3c7-f242-445f-bfe0-56e7bc0b0959" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetolpm/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetolpm/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetolpm/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetolpm/Funcionario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetolpm/Livro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetolpm/Livro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/projetolpm/Projetolpm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetolpm/Projetolpm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,5 +64,15 @@
       <updated>1654643939707</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.util.InputMismatchException" package="java.util" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

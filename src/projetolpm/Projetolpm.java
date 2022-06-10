@@ -37,9 +37,8 @@ public class Projetolpm {
             idade = input.nextInt();
         }
         catch(Exception e){
-            System.out.println("Erro!! Idade inserida inválida.");
+            System.out.println("Erro!! Idade inserida inválida. Sua idade foi definida para 0");
             idade = 0;
-            throw new ArithmeticException("Erro! Valor invalido.");
         }
         
         
@@ -81,8 +80,6 @@ public class Projetolpm {
             idade = input.nextInt();
         }
         catch(Exception e){
-            System.out.println("Erro!! Idade inserida inválida.");
-            idade = 0;
             throw new ArithmeticException("Erro! Valor invalido.");
         }
         
@@ -91,9 +88,7 @@ public class Projetolpm {
             salario = input.nextFloat();
         }
         catch(Exception e){
-            System.out.println("Erro!! Salário inserido inválido.");
-            salario = 0;
-            throw new ArithmeticException("Erro! Valor invalido.");
+            throw new RuntimeException("Erro!! Salário inserido inválido.");
         }
 
         System.out.println("Id: ");
@@ -128,9 +123,8 @@ public class Projetolpm {
             preco = input.nextFloat();
         }
         catch(Exception e){
-            System.out.println("Erro!! preço inserido inválido.");
+            System.out.println("Erro!! preço inserido inválido. O valor foi definido para 0");
             preco = 0;
-            throw new ArithmeticException("Erro! Valor invalido.");
         }
 
         System.out.println("Id: ");
@@ -208,6 +202,7 @@ public class Projetolpm {
     public static void buscarL() {
         System.out.println("Deseja buscar por: \n[1] Descrição\n[2] Nome \n[3] Preço");
         int resp = input.nextInt();
+
         switch (resp) {
             case 1:
                 limpaBuffer();
@@ -345,12 +340,18 @@ public class Projetolpm {
             numeros += l.preco;
             cont++;
         }
+        if (cont == 0){
+            return -1;
+        }
         return numeros / cont;
     }
 
     public static int qtdLivrosCaros(){
         int qtdcaros = 0;
         float precomedio = mediaPrecosLivros();
+        if (precomedio < 0){
+            return -1;
+        }
         for(Livro l: cadLiv){
             if (l.preco > precomedio){
                 qtdcaros++;
@@ -490,7 +491,7 @@ public class Projetolpm {
                                     + "\n[1] O livro mais caro do sistema"
                                     + "\n[2] O livro mais barato do sistema"
                                     + "\n[3] A média de preços dos livros"
-                                    + "\n[4] A quatidade de livros com preço acima da média\n");
+                                    + "\n[4] A quantidade de livros com preço acima da média\n");
 
                             opcao = input.nextInt();
 
@@ -503,10 +504,21 @@ public class Projetolpm {
                                     livroMaisBarato();
                                     break;
                                 case 3:
-                                    System.out.println(mediaPrecosLivros());
+                                    float media = mediaPrecosLivros();
+                                    if (media == -1){
+                                        System.out.println("|===============|" + "Não há livros no estoque." + "|===============|");
+                                    }
+                                    else{
+                                        System.out.println("|===============|" + "A média dos preços é: " + mediaPrecosLivros() + " R$|===============|");
+                                    }
                                     break;
                                 case 4:
-                                    System.out.println(qtdLivrosCaros());
+                                    if (qtdLivrosCaros() < 0){
+                                        System.out.println("|===============|" + "Não há livros no estoque." + "|===============|");
+                                    }
+                                    else{
+                                    System.out.println("|===============|" + "A quantidade de livros com preço acima da média é: " + qtdLivrosCaros() + "|===============|");
+                                    }
                                     break;
                             }
                             break;
@@ -515,7 +527,7 @@ public class Projetolpm {
                     break;
                     
             }
-            
+            limpaBuffer();
             System.out.println("\nDeseja continuar? Digite [1] caso sim ou [2] caso não\n");
             resposta = input.nextInt();
             if (resposta != 1)
